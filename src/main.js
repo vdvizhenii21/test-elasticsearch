@@ -1,4 +1,12 @@
-import { createApp } from 'vue'
-import App from './App.vue'
+import Vue from 'vue';
+import tableComponent from './components/table-component.vue';
+console.log(tableComponent);
 
-createApp(App).mount('#app')
+Vue.component('table-component', tableComponent);
+
+new Vue({
+    el: '#app',
+    components: {
+      tableComponent
+    }
+  })
