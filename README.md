@@ -1,24 +1,20 @@
-# test-app
+# test-elasticsearch
 
-## Project setup
-```
-npm install
+## Run Project
+
+For running elasticsearch:
+```sh
+docker run --rm -p 9200:9200 -p 9300:9300 -e "xpack.security.enabled=false" -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:8.6.1
 ```
 
-### Compiles and hot-reloads for development
+After that need deploy data to elasticsearch using script:
+
+```sh
+python elastic.py
 ```
+
+And then we run Vue app:
+
+```sh
 npm run serve
 ```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
